@@ -1,14 +1,27 @@
-import React from 'react'
+import React, {useState, useEffect} from 'react'
 import styled from 'styled-components'
 import Product from './Product'
-import data from '../data'
+import axios from 'axios'
+
 
 function Products() {
-  console.log(data)
+  const [products, setProducts] = useState([])
+
+  useEffect(() => {
+      const fetchData = async () => {
+          const {data} = await axios.get("http://localhost:5000/api/products");
+          setProducts(data)
+          console.log(data)
+      }
+      fetchData();
+      return () => {
+          
+      }
+  }, [])
     return (
         <ProductContainer>
             {
-              data.products.map(product =>
+              products.map(product =>
                 <Product product={product} />)
             }
            

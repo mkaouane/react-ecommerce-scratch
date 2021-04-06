@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {useState, useEffect} from 'react'
 import styled from 'styled-components'
 import Product from './Product'
 import Products from './Products'
@@ -8,8 +8,10 @@ import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom"
 
 
 
-
 export default function Home() {
+
+  
+
     return (
         <Container>
 
