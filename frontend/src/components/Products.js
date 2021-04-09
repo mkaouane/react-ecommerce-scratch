@@ -22,7 +22,7 @@ function Products() {
         <ProductContainer>
             {
               products.map(product =>
-                <Product product={product} />)
+                <Product product={product} key={product.id} />)
             }
            
         </ProductContainer>
