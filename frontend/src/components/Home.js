@@ -1,10 +1,8 @@
-import React, {useState, useEffect} from 'react'
+import React from 'react'
 import styled from 'styled-components'
-import Product from './Product'
 import Products from './Products'
 import Sidebar from './Sidebar'
 import Grid from '@material-ui/core/Grid';
-import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom"
 
 
 

@@ -1,13 +1,10 @@
 import React from 'react';
-import styled from 'styled-components'
 import { makeStyles } from '@material-ui/core/styles';
 import ShoppingBasketIcon from '@material-ui/icons/ShoppingBasket';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
 import Button from '@material-ui/core/Button';
-import IconButton from '@material-ui/core/IconButton';
-import MenuIcon from '@material-ui/icons/Menu';
 import Badge from '@material-ui/core/Badge';
 import {Link} from 'react-router-dom'
 
@@ -29,11 +26,11 @@ export default function ButtonAppBar() {
 
   return (
     <div className={classes.root}>
-      <AppBar position="static" style={{'background-color': '#11151C'}}>
+      <AppBar position="static" style={{'backgroundColor': '#11151C'}}>
         <Toolbar>
 
           <Typography variant="h6" className={classes.title}>
-        <Link to="/" style={{'text-decoration': 'none'}}>
+        <Link to="/" style={{'textDecoration': 'none'}}>
             ReactJS
         </Link>
           </Typography>
