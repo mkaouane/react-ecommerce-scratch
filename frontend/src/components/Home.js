@@ -8,7 +8,6 @@ import Grid from '@material-ui/core/Grid';
 
 export default function Home() {
 
-  
 
     return (
         <Container>
