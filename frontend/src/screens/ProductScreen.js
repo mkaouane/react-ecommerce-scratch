@@ -1,15 +1,28 @@
-import React from 'react'
-import Product from '../components/Product'
-import data from '../data'
-import Products from '../components/Products'
+import React, {useEffect} from 'react'
+import {useSelector, useDispatch} from 'react-redux'
 import styled from 'styled-components'
+import { detailsProduct } from "../actions/productActions";
 
 function ProductScreen(props) {
-    console.log(props.match.params.id)
-    const product = data.products.find(x => x.id === props.match.params.id);
+
+    const productDetails = useSelector((state) => state.productDetails);
+    const dispatch = useDispatch();
+    const {product, loading, error } = productDetails;
+    
     console.log(product)
+
+    useEffect(() => {
+        dispatch(detailsProduct(props.match.params.id));
+        return () => {
+            
+        }
+    }, [])
     return (
+        loading ? <div>Loading..</div> :
+    error ? <div>{error}</div> :
         <Container>
+            {product.name}
+            <button>Add to cart</button>
         </Container>
     )
 }
@@ -19,11 +32,10 @@ export default ProductScreen;
 
 const Container = styled.div`
 margin-top: 50px;
-height: 700px;
+height: 800px;
 border:2px solid black;
-display:flex;
-justify-content:center;
-flex-wrap: wrap;
+margin: auto;
+max-width: 900px;
 overflow-y: scroll;
 
 background: rgba( 255, 255, 255, 0.15 );
